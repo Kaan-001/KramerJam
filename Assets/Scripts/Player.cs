@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+  //  public Vector2 playerPosition = transform.position;
     public Vector2 MovementSpeed = new Vector2(20.0f, 20.0f); // 2D Movement speed to have independant axis speed
     private new Rigidbody2D rigidbody2D; // Local rigidbody variable to hold a reference to the attached Rigidbody2D component
     private Vector2 inputVector = new Vector2(0.0f, 0.0f);
