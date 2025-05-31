@@ -1,19 +1,18 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour
+public class Player : MonoBehaviour
 {
-  //  public Vector2 playerPosition = transform.position;
+    public float health = 100;
     public Vector2 MovementSpeed = new Vector2(20.0f, 20.0f); // 2D Movement speed to have independant axis speed
-    private new Rigidbody2D rigidbody2D; // Local rigidbody variable to hold a reference to the attached Rigidbody2D component
-    private Vector2 inputVector = new Vector2(0.0f, 0.0f);
+    public Rigidbody2D rigidbody2D;
+    public Vector2 inputVector = new Vector2(0.0f, 0.0f);
 
     void Awake()
     {
         // Setup Rigidbody for frictionless top down movement and dynamic collision
         // If RequireComponent is used uncomment the GetComponent and comment the AddComponent out
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
-        
         rigidbody2D.angularDrag = 0.0f;
         rigidbody2D.gravityScale = 0.0f;
     }
