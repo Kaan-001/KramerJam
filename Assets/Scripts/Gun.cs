@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform firePoint;
     public float bulletSpeed = 50, bulletLifeTime = 2f;
     private GameObject playerPosition;
+    public GameObject particle;
 
     private void Start()
     {
@@ -44,5 +45,6 @@ public class Gun : MonoBehaviour
         bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right * bulletSpeed, ForceMode2D.Impulse);
 
         Destroy(bulletx, bulletLifeTime);
+        particle.GetComponent<ParticleSystem>().Play();
     }
 }
