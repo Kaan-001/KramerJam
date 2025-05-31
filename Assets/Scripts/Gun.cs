@@ -4,7 +4,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    private float bulletSpeed = 30f, bulletLifeTime = 1f, bulletDelay = .4f, nextShootTime = 0f;
+    private float bulletSpeed = 30f, bulletLifeTime =1f, bulletDelay = 0.4f, nextShootTime = 0f;
     private GameObject playerPosition;
     public GameObject particle;
 

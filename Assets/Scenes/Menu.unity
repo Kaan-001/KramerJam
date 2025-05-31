@@ -2044,7 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuAudio: {fileID: 1702562505}
   open: {fileID: 8300000, guid: 59bd762a65c66644d9234557c260276b, type: 3}
-  close: {fileID: 8300000, guid: 5a2c9deab2165894cba4704f1107f9cb, type: 3}
+  close: {fileID: 8300000, guid: f5ecaf30e07547747ad6ddb5b0146f2a, type: 3}
 --- !u!82 &1702562505
 AudioSource:
   m_ObjectHideFlags: 0
