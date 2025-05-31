@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
@@ -6,12 +6,12 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform firePoint;
     public float bulletSpeed = 50, bulletLifeTime = 2f;
     private GameObject playerPosition;
-    
+
     private void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player");
     }
-    
+
     void Update()
     {
         GunMovement();
@@ -40,12 +40,9 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        // BUG: Mouse imleci karaktere yakýn olursa mermi hýzlý gitmiyor olduðu yere düþüyor.
-
-        
         GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right*bulletSpeed,ForceMode2D.Impulse);
-         
+        bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right * bulletSpeed, ForceMode2D.Impulse);
+
         Destroy(bulletx, bulletLifeTime);
     }
 }

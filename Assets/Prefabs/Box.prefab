@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7584118205017370915}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,9 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDestroyed: 0
-  healthAward: 10
-  healthBox: 0
-  MaxHealthBox: 2
   Prefabs:
   - {fileID: 2566847931555986144, guid: 150071c171227034fa818dc1d73fe6b7, type: 3}
   - {fileID: 2566847931555986144, guid: 150071c171227034fa818dc1d73fe6b7, type: 3}
