@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59c22fa1007f863479c9434b7985440d
+guid: 62f80b876e03fc14c8cea70dd93bd2b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,43 +136,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boxs_0
+      name: heal potion_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 219
-        width: 239
-        height: 181
+        x: 73
+        y: 193
+        width: 85
+        height: 130
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eee39ed1dfb05174e88173017d8352c6
-      internalID: -1121409990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boxs_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 239
-        height: 198
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1f354b5a7e6dac4f97bec813981d463
-      internalID: 109805092
+      spriteID: 04449ecd544458e47a067eea22c52269
+      internalID: 907343884
       vertices: []
       indices: 
       edges: []
@@ -188,8 +167,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boxs_0: -1121409990
-      boxs_1: 109805092
+      heal potion_0: 907343884
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
