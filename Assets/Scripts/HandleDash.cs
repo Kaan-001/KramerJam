@@ -1,51 +1,35 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
 public class HandleDash : MonoBehaviour
 {
-    // FIX: Dash çalýþmýyor
-
-    public float dashCooldown = 1.0f;
-    public float dashDuration = 0.2f;
-    public float dashSpeed = 10.0f;
-
-    private float dashTimer = 0.0f;
-    private bool isDashing = false;
-
-    public Player player;
-
-    void Update()
+    public LayerMask DashController;
+    public Vector2 direction;
+    public void DirectionCalculate() 
     {
-        // Dash input
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            PerformDash();
-        }
-
-        if (isDashing == true)
-        {
-            dashCooldown -= Time.deltaTime;
-        }
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        direction = (mousePosition - (Vector2)transform.position).normalized;
     }
-
-    private IEnumerator PerformDash()
+    public void Update()
     {
-        Vector2 dashDirection = player.inputVector;
-
-        Debug.Log(dashDirection);
-
-        // Eðer hareket yoksa dash yapma
-        if (dashDirection == Vector2.zero)
-            yield break;
-        else
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift)) { Dashing(); }
+    }
+    public void Dashing() 
+    {
+        DirectionCalculate();
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction,5,DashController);
+        if(hit.collider == null) 
         {
-            isDashing = true;
+            Vector3 targetPosition = transform.position + (Vector3)(direction.normalized * 5f);
 
-            player.rigidbody2D.velocity = dashDirection * dashSpeed;
-        }    
-
-        yield return new WaitForSeconds(dashDuration);
-
-        isDashing = false;
+            // DOTween ile karakteri 0.1 saniyede hedefe taþý
+            transform.DOMove(targetPosition, 0.2f).SetEase(Ease.OutQuad);
+        }
+        else 
+        {
+        //burada dash atamasýn ýþýnlanamasýn
+        }
     }
 }

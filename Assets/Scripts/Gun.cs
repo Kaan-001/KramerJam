@@ -4,7 +4,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    private float bulletSpeed = 50f, bulletLifeTime = 1f;
+    public float bulletSpeed = 50, bulletLifeTime = 2f;
     private GameObject playerPosition;
     
     private void Start()
@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
     {
         GunMovement();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
             Shoot();
     }
 
@@ -42,11 +42,10 @@ public class Gun : MonoBehaviour
     {
         // BUG: Mouse imleci karaktere yakýn olursa mermi hýzlý gitmiyor olduðu yere düþüyor.
 
-        Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - firePoint.position).normalized;
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
-        rb2D.AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
-
-        Destroy(bullet, bulletLifeTime);
+        
+        GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right*bulletSpeed,ForceMode2D.Impulse);
+         
+        Destroy(bulletx, bulletLifeTime);
     }
 }
