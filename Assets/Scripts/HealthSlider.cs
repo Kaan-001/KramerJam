@@ -14,9 +14,14 @@ public class HealthSlider : MonoBehaviour
         GetHurt(50);
     }
 
-    public void GetHurt(int damage)
+    public void GetHurt(float damage)
     {
         player.health -= damage;
         healthBar.fillAmount = player.health / 100;
+    }
+
+    public void GetHP(float hp)
+    {
+        healthBar.fillAmount += hp / 100;
     }
 }

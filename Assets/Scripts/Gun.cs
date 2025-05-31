@@ -40,12 +40,21 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        // BUG: Mouse imleci karaktere yakýn olursa mermi hýzlý gitmiyor olduðu yere düþüyor.
+        // BUG: mermi yukarý ve aþaðý sekiyor sadece
 
-        
-        GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right*bulletSpeed,ForceMode2D.Impulse);
-         
+        //GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        //Vector2 shootDirection = firePoint.right.normalized;
+        //bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right * bulletSpeed, ForceMode2D.Impulse);
+
+
+        Vector2 shootDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - firePoint.position).normalized;
+        Rigidbody2D rb = bulletx.GetComponent<Rigidbody2D>();
+        rb.velocity = shootDirection * bulletSpeed;
+
         Destroy(bulletx, bulletLifeTime);
+
+
     }
 }
