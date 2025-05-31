@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public float health = 100;
     public Animator animator;
-    public Vector2 MovementSpeed = new Vector2(20.0f, 20.0f);
+    public Vector2 MovementSpeed = new Vector2(25.0f, 25.0f);
     private Rigidbody2D rigidbody2Dx;
     public Vector2 inputVector = new Vector2(0.0f, 0.0f);
 

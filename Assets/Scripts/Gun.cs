@@ -42,7 +42,7 @@ public class Gun : MonoBehaviour
     {
         GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right * bulletSpeed, ForceMode2D.Impulse);
-
+        CameraShake.instance.Shake();
         Destroy(bulletx, bulletLifeTime);
         particle.GetComponent<ParticleSystem>().Play();
     }
