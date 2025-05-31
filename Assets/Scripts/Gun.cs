@@ -4,7 +4,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    public float bulletSpeed = 50, bulletLifeTime = 2f;
+    public float bulletSpeed = 50f, bulletLifeTime = 2f, bulletDelay = 1f, nextShootTime = 0f;
     private GameObject playerPosition;
     public GameObject particle;
 
@@ -17,8 +17,11 @@ public class Gun : MonoBehaviour
     {
         GunMovement();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextShootTime)
+        {
             Shoot();
+            nextShootTime = Time.time + bulletDelay;
+        }
     }
 
     void GunMovement()
@@ -30,13 +33,9 @@ public class Gun : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         if (angle < 90 && angle > 0 || angle < 0 && angle > -90)
-        {
             transform.GetComponent<SpriteRenderer>().flipY = false;
-        }
         else
-        {
             transform.GetComponent<SpriteRenderer>().flipY = true;
-        }
     }
 
     void Shoot()

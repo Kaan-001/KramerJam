@@ -306,6 +306,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3421311048598065359, guid: 78ff1ab2d5713db4e90736245da3f504, type: 3}
   m_PrefabInstance: {fileID: 1529386793}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &241268984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4777027462837316750, guid: aa4fd027c73fd8141ad080510cc1ac2f, type: 3}
+  m_PrefabInstance: {fileID: 1266537813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &246940181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3421311048598065359, guid: 78ff1ab2d5713db4e90736245da3f504, type: 3}
@@ -64146,15 +64151,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2137301178341628619, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.362
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 2137301178341628619, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.195
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 2770093562422976504, guid: f5575ed86a9b3674394451ec13985229, type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 241268984}
+    - target: {fileID: 2770093562422976504, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: bulletLifeTime
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5669566041916343532, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: m_Size.x
