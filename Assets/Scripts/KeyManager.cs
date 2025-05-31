@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
-    public GameObject key;
-    private bool isKey = false;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Start is called before the first frame update
+    void Start()
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            Destroy(this.gameObject);
-            isKey = true;
-        }
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

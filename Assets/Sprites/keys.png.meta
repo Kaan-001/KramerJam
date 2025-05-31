@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,10 +113,10 @@ TextureImporter:
       name: keys_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 275
-        width: 126
-        height: 125
+        x: 67
+        y: 276
+        width: 123
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21f49bf41a4e01545acc165c6f228335
-      internalID: -638915052
+      spriteID: 5e3b78a033e2b0c4d8edaa0607cc458b
+      internalID: 1489428683
       vertices: []
       indices: 
       edges: []
@@ -134,10 +134,10 @@ TextureImporter:
       name: keys_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 137
-        width: 126
-        height: 129
+        x: 67
+        y: 138
+        width: 124
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd3f699051c971841be8f278739c53df
-      internalID: 1982946308
+      spriteID: 1b05896b8572e5e4f86f7761ab0a5e7a
+      internalID: -1933267540
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: keys_2
       rect:
         serializedVersion: 2
-        x: 66
-        y: 0
-        width: 126
-        height: 129
+        x: 67
+        y: 1
+        width: 124
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4162e5951d06eb43b732d1712e64073
-      internalID: 1689451631
+      spriteID: 3916488a48ef9af4e8c4393ea70ca55e
+      internalID: -1337293569
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      keys_0: -638915052
-      keys_1: 1982946308
-      keys_2: 1689451631
+      keys_0: 1489428683
+      keys_1: -1933267540
+      keys_2: -1337293569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
