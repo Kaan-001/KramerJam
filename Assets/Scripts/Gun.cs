@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
@@ -6,12 +6,12 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform firePoint;
     public float bulletSpeed = 50, bulletLifeTime = 2f;
     private GameObject playerPosition;
-    
+
     private void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player");
     }
-    
+
     void Update()
     {
         GunMovement();
@@ -40,21 +40,9 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        // BUG: mermi yukarý ve aþaðý sekiyor sadece
-
-        //GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
-        GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        //Vector2 shootDirection = firePoint.right.normalized;
-        //bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right * bulletSpeed, ForceMode2D.Impulse);
-
-
-        Vector2 shootDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - firePoint.position).normalized;
-        Rigidbody2D rb = bulletx.GetComponent<Rigidbody2D>();
-        rb.velocity = shootDirection * bulletSpeed;
+        GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right * bulletSpeed, ForceMode2D.Impulse);
 
         Destroy(bulletx, bulletLifeTime);
-
-
     }
 }
