@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 public class UIManaging : MonoBehaviour
 {
     public Image[] UIelements;
@@ -13,7 +14,7 @@ public class UIManaging : MonoBehaviour
     public float amplitude = 20f;   // Dalganýn yüksekliði
     public float duration = 1f;     // Bir dalga turunun süresi
     public float delayBetween = 0.1f; // Objeler arasý faz farký
-
+   
     void Start()
     {
       
@@ -62,7 +63,7 @@ public class UIManaging : MonoBehaviour
     {
         optionPanel.DOKill();
         optionPanel.transform.DOScale(0, 2f);
-        optionPanel.transform.DOLocalMoveX(2000, 1f).SetEase(Ease.OutExpo);
+        optionPanel.transform.DOLocalMoveX(-2000, 1f).SetEase(Ease.OutExpo);
 
         yield return new WaitForSeconds(0.5f);
 
@@ -73,7 +74,17 @@ public class UIManaging : MonoBehaviour
         }
         
     }
-  
+    public void ExitButton() 
+    {
+        Application.Quit();
+    }
+    public void PlayButton() 
+    {
+        //oncompleteli biþi yap
+
+        SceneManager.LoadScene(1);
+    }
+
 }
 
 
