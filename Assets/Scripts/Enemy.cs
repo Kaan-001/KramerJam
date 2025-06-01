@@ -5,8 +5,6 @@ using Pathfinding;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-
 public class Enemy : MonoBehaviour
 {
     public AIDestinationSetter DestinationSetter;
@@ -15,10 +13,13 @@ public class Enemy : MonoBehaviour
     private int maxHealth = 2;
     private int currentHealth;
     public GameObject KeyDoor;
+    public HealthHandle healthHandle;
+
     void Start()
     {
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
+        healthHandle = GameObject.FindAnyObjectByType<HealthHandle>();
         DestinationSetter.target = player.transform;
     }
 
@@ -61,5 +62,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            healthHandle.GetHurt(10f);
+            healthHandle.Die();
+        }
+    }
 }

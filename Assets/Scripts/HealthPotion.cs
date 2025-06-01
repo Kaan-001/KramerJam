@@ -5,14 +5,14 @@ using UnityEngine;
 public class HealthPotion : MonoBehaviour
 {
     private Player player;
-    private HealthSlider healthSlider;
+    private HealthHandle healthSlider;
     public float healthAward = 10;
     public float currentHealth;
 
     private void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
-        healthSlider = GameObject.FindObjectOfType<HealthSlider>();
+        healthSlider = GameObject.FindObjectOfType<HealthHandle>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

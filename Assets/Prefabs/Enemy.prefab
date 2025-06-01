@@ -106,6 +106,7 @@ MonoBehaviour:
   DestinationSetter: {fileID: 4284679605670201548}
   player: {fileID: 0}
   KeyDoor: {fileID: 0}
+  healthHandle: {fileID: 0}
 --- !u!95 &4859336443879056467
 Animator:
   serializedVersion: 5
@@ -185,7 +186,7 @@ MonoBehaviour:
   radius: 0.5
   height: 1
   canMove: 1
-  maxSpeed: 2.5
+  maxSpeed: 5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -226,6 +227,7 @@ MonoBehaviour:
   DestinationSetter: {fileID: 4284679605670201548}
   player: {fileID: 0}
   KeyDoor: {fileID: 0}
+  healthHandle: {fileID: 0}
 --- !u!58 &2779734471083270162
 CircleCollider2D:
   m_ObjectHideFlags: 0

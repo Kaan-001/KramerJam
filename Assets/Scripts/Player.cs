@@ -1,3 +1,4 @@
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     public Vector2 MovementSpeed = new Vector2(30.0f, 30.0f);
     private Rigidbody2D rigidbody2Dx;
     public Vector2 inputVector = new Vector2(0.0f, 0.0f);
+    private HealthHandle healthHandle;
 
     private GameObject gunObject;
 
