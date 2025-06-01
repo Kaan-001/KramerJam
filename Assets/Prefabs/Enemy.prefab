@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4284679605670201548}
   - component: {fileID: 6905039257864573613}
   - component: {fileID: 6283253078703188064}
+  - component: {fileID: -5899078973013120750}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4059432bede1d40b1c6bbeefcad591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestinationSetter: {fileID: 0}
 --- !u!95 &4859336443879056467
 Animator:
   serializedVersion: 5
@@ -206,3 +208,16 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
+--- !u!114 &-5899078973013120750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4080211226797261412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4059432bede1d40b1c6bbeefcad591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestinationSetter: {fileID: 4284679605670201548}
