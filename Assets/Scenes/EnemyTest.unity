@@ -25328,7 +25328,7 @@ GameObject:
   - component: {fileID: 1040880729}
   - component: {fileID: 1040880728}
   - component: {fileID: 1040880730}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64539,6 +64539,10 @@ PrefabInstance:
     - target: {fileID: 2770093562422976504, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: bulletLifeTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770093562422976504, guid: f5575ed86a9b3674394451ec13985229, type: 3}
+      propertyPath: shootableLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669566041916343532, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: m_Size.x

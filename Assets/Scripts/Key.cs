@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && isKeyEquiped)
         {
             isKeyEquiped = true;
             Destroy(this.gameObject, 0.0f);
