@@ -61,6 +61,7 @@ public class HandleDash : MonoBehaviour
         else
         {
             // Engel varsa dash atmasın
+            StartCoroutine(candashing());
         }
     }
 
