@@ -9,7 +9,7 @@ public class UIManaging : MonoBehaviour
     public Image[] UIelements;
     public Image optionPanel;
     public Image OptionsButton;
-
+    public Image Door1, Door2;
     public RectTransform[] images; // UI Image objeleri
     public float amplitude = 20f;   // Dalganın yüksekliği
     public float duration = 1f;     // Bir dalga turunun süresi
@@ -78,12 +78,24 @@ public class UIManaging : MonoBehaviour
     {
         Application.Quit();
     }
-    public void PlayButton() 
+    public void PlayButton()
     {
-        //oncompleteli bişi yap
+        // Kapılar hedef konuma DOTween ile giderken "çarpışma hissi" efektiyle gelsin
+        Door1.transform.DOLocalMoveX(-480, 1f)
+            .SetEase(Ease.OutBounce); // biraz fazla gidip geri gelir (overshoot efekti)
 
-        SceneManager.LoadScene(1);
+        Door2.transform.DOLocalMoveX(480, 1f)
+            .SetEase(Ease.OutBounce)
+            .OnComplete(() =>
+            {
+                // 1.2 saniye bekleyip sonra sahne geç
+                DOVirtual.DelayedCall(1.2f, () =>
+                {
+                    SceneManager.LoadScene(1);
+                });
+            });
     }
+
 
 }
 
