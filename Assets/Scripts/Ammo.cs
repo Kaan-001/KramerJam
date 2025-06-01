@@ -17,17 +17,33 @@ public class Ammo : MonoBehaviour
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.2f, transform.right, 0.1f, LayerMask);
         if (hit.collider != null && hit.collider.gameObject != this.gameObject)
         {
-            Enemy enemy = hit.collider.GetComponent<Enemy>();
-            if (enemy != null)
+            if (hit.collider.TryGetComponent<Enemy>(out var enemy))
             {
-                enemy.Hit(1);
+                if (enemy != null)
+                {
+                    enemy.Hit(1);
+                }
+
+                // Efekti oluï¿½tur
+                Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+
+                // Mermiyi yok et
+                Destroy(gameObject);
             }
+            if (hit.collider.TryGetComponent<Boss>(out var boss))
+            {
+                if (boss != null)
+                {
+                    Debug.Log("Taking Damage");
+                    boss.TakeDamage(1);
+                }
 
-            // Efekti oluþtur
-            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+                // Efekti oluï¿½tur
+                Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
 
-            // Mermiyi yok et
-            Destroy(gameObject);
+                // Mermiyi yok et
+                Destroy(gameObject);
+            }
         }
     }
 }

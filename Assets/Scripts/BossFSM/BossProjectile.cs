@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Scenes.Scripts.BossFSM
@@ -14,6 +16,15 @@ namespace Scenes.Scripts.BossFSM
         {
             direction = dir.normalized;
             Destroy(gameObject, lifetime);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                FindObjectOfType(typeof(HealthHandle)).GetComponent<HealthHandle>().GetHurt(10);
+                Destroy(gameObject);
+            }
         }
 
         void Update()
