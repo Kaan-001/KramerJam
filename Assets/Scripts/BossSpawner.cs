@@ -6,6 +6,7 @@ namespace Scenes.Scripts
     public class BossSpawner : MonoBehaviour
     {
         public static BossSpawner instance;
+        public DialogueBox dialogueBox;
         
         public GameObject bossPrefab;
         public Vector2 bossSpawnPoint;
@@ -32,7 +33,8 @@ namespace Scenes.Scripts
             if (currentDeathCount >= deathThreshold)
             {
                 Debug.Log("Boss spawned");
-                Instantiate(bossPrefab, bossSpawnPoint, Quaternion.identity);
+                var boss = Instantiate(bossPrefab, bossSpawnPoint, Quaternion.identity).GetComponent<Boss>();
+                boss.endDialogue = dialogueBox;
                 isBossSpawned = true;
             }
         }

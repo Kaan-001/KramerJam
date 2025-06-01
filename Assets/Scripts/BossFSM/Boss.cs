@@ -18,6 +18,7 @@ public class Boss : MonoBehaviour
     private List<BossSkill> activeSkills;
     
     public bool isActive;
+    public DialogueBox endDialogue;
 
     void Start()
     {
