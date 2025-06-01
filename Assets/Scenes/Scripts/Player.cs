@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public float health = 100;
     public Animator animator;
-    public Vector2 MovementSpeed = new Vector2(25.0f, 25.0f);
+    public Vector2 MovementSpeed = new Vector2(30.0f, 30.0f);
     private Rigidbody2D rigidbody2Dx;
     public Vector2 inputVector = new Vector2(0.0f, 0.0f);
 
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        Vector2 velocity = new Vector2(inputVector.x * MovementSpeed.x, inputVector.y * MovementSpeed.y);
+        Vector2 velocity = new Vector2(inputVector.x * MovementSpeed.x*2, inputVector.y * MovementSpeed.y*2);
         rigidbody2Dx.velocity = velocity;
 
         // Yürüme efekti kontrolü
