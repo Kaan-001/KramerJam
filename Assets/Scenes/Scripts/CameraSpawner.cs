@@ -26,7 +26,7 @@ public class CameraSpawner : MonoBehaviour
     {
         if (!canspawn)
             yield break;
-
+        yield return new WaitForSeconds(1.5f);
         int spawnAmount = Random.Range(5, 11);
         countNow = 0;
 
@@ -40,10 +40,20 @@ public class CameraSpawner : MonoBehaviour
                 GameObject warning = Instantiate(spawnWarningPrefab, spawnPos, Quaternion.identity);
 
                 // Başlangıçta 0 scale (görünmez)
+               
+                // DOTween ile büyüyerek görünür olsun
+             
                 warning.transform.localScale = Vector3.zero;
 
-                // DOTween ile büyüyerek görünür olsun
-                warning.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack); // fışşş efekti 🎇
+                Sequence fxSequence = DOTween.Sequence();
+
+                // 1. Aynı anda scale ve rotasyon yap
+                fxSequence.Join(
+                    warning.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack)
+                );
+                fxSequence.Join(
+                    warning.transform.DORotate(new Vector3(0f, 0f, 360f), 0.3f, RotateMode.FastBeyond360)
+                );
 
                 // Bekleme
                 yield return new WaitForSeconds(effectBeforeSpawnDelay);
