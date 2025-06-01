@@ -29,10 +29,24 @@ public class Player : MonoBehaviour
         FlipBasedOnGun();
     }
 
+    public ParticleSystem walkDust;
+
     void Move()
     {
         Vector2 velocity = new Vector2(inputVector.x * MovementSpeed.x, inputVector.y * MovementSpeed.y);
         rigidbody2Dx.velocity = velocity;
+
+        // Yürüme efekti kontrolü
+        if (velocity.magnitude > 0.01f)
+        {
+            if (!walkDust.isPlaying)
+                walkDust.Play();
+        }
+        else
+        {
+            if (walkDust.isPlaying)
+                walkDust.Stop();
+        }
     }
 
     void HandleAnimations()

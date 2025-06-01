@@ -9,12 +9,16 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public AIDestinationSetter DestinationSetter;
-    private Transform player;
+    public GameObject player;
+    private int damage = 2;
+    private int maxHealth = 2;
+    private int currentHealth;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        DestinationSetter.target = player;
+        currentHealth = maxHealth;
+        player = GameObject.FindGameObjectWithTag("Player");
+        DestinationSetter.target = player.transform;
     }
 
     void Update()
@@ -26,7 +30,7 @@ public class Enemy : MonoBehaviour
     {
         if (player == null) return;
 
-        float diff = player.position.x - transform.position.x;
+        float diff = player.transform.position.x - transform.position.x;
 
         if (diff > 0.1f)
         {
@@ -37,4 +41,15 @@ public class Enemy : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f); // Sola bak
         }
     }
+
+    public void Hit(int hit)
+    {
+        currentHealth -= hit;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
 }

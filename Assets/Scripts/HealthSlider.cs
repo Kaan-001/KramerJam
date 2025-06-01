@@ -11,7 +11,7 @@ public class HealthSlider : MonoBehaviour
 
     void Start()
     {
-        GetHurt(50);
+      
     }
 
     public void GetHurt(float damage)

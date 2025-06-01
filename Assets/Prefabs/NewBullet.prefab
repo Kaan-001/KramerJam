@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 558549530084680783}
   - component: {fileID: 2552045381430190537}
   - component: {fileID: -6170519743020594558}
+  - component: {fileID: 5484880491676307058}
   m_Layer: 6
   m_Name: NewBullet
   m_TagString: Bullet
@@ -159,8 +160,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0030640753, y: -1.699899}
-  m_Size: {x: 1.4030961, y: 3.736275}
+  m_Offset: {x: -0.0030640755, y: -2.69186}
+  m_Size: {x: 1.4030874, y: 1.7523371}
   m_Direction: 0
 --- !u!114 &-6170519743020594558
 MonoBehaviour:
@@ -174,3 +175,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6d5437906e2f44fba3e3b7091bc4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5484880491676307058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045816131435259511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eb20456acb10448a0ba98ea67b249a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  hitEffectPrefab: {fileID: 7371844681997300807, guid: ec740cfba0c962040a284638a6602431, type: 3}
