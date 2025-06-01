@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 
         if (diff > 0.1f)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f); // Saða bak
+            transform.localScale = new Vector3(-1f, 1f, 1f); // Saï¿½a bak
         }
         else if (diff < -0.1f)
         {
@@ -48,7 +48,8 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= hit;
         if (currentHealth <= 0)
-        {if(KeyDoor != null) 
+        {
+            if(KeyDoor != null) 
             {
                 GameObject spawnedObj = Instantiate(KeyDoor, transform.position, Quaternion.identity);
 
@@ -57,7 +58,8 @@ public class Enemy : MonoBehaviour
 
                 spawnedObj.transform.DOJump(jumpTarget, 1.5f, 1, 0.5f).SetEase(Ease.OutQuad);
             }
-        // Düþman ölme efekti yapabilirsin destroy olur ama öncesinde efekti instantiate eder ve efekt kapanýr
+            BossSpawner.onEnemyDeath.Invoke();
+            // Dï¿½ï¿½man ï¿½lme efekti yapabilirsin destroy olur ama ï¿½ncesinde efekti instantiate eder ve efekt kapanï¿½r
             Destroy(gameObject);
         }
     }
