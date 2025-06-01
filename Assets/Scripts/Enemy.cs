@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Pathfinding;
+using Scenes.Scripts;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -58,7 +59,7 @@ public class Enemy : MonoBehaviour
 
                 spawnedObj.transform.DOJump(jumpTarget, 1.5f, 1, 0.5f).SetEase(Ease.OutQuad);
             }
-            BossSpawner.onEnemyDeath.Invoke();
+            BossSpawner.instance.OnEnemyDeath();
             // D��man �lme efekti yapabilirsin destroy olur ama �ncesinde efekti instantiate eder ve efekt kapan�r
             Destroy(gameObject);
         }

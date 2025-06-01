@@ -13,8 +13,11 @@ namespace Scenes.Scripts.BossFSM
 
         public void Update()
         {
-            Debug.Log("Updating Idle State");
-            boss.GetReadySkill();
+            var skill = boss.GetReadySkill();
+            if (skill != null)
+            {
+                skill.Trigger();
+            }
         }
 
         public void Exit()
