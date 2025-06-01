@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +6,8 @@ public class CorridorTrigger : MonoBehaviour
 {
     public enum CorridorDirection
     {
-        Horizontal, // Sað <-> Sol
-        Vertical    // Yukarý <-> Aþaðý
+        Horizontal, // SaÄŸ <-> Sol
+        Vertical    // YukarÄ± <-> AÅŸaÄŸÄ±
     }
 
     public CorridorDirection directionMode = CorridorDirection.Horizontal;
