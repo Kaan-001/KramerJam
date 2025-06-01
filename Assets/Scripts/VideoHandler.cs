@@ -12,6 +12,11 @@ public class VideoHandler : MonoBehaviour
     public Image fadeImage; // UI Image for fading
     public float fadeDuration = 1.5f;
 
+    private void Start()
+    {
+        Play();
+    }
+
     public void Play()
     {
         // Önce ekran siyah olsun
