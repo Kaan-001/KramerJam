@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
     private float bulletSpeed = 30f, bulletLifeTime =1f, bulletDelay = 0.4f, nextShootTime = 0f;
     private GameObject playerPosition;
     public GameObject particle;
+    public float anglex;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class Gun : MonoBehaviour
         Vector2 direction = (mousePosition - (Vector2)playerPosition.transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        anglex = angle;
 
         if (angle < 90 && angle > 0 || angle < 0 && angle > -90)
             transform.GetComponent<SpriteRenderer>().flipY = false;
@@ -40,10 +42,21 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.right * bulletSpeed, ForceMode2D.Impulse);
+        // mermiyi anglex rotasyonu ile oluştur
+        Quaternion bulletRotation = Quaternion.Euler(0f, 0f, anglex-90);
+
+        GameObject bulletx = Instantiate(bulletPrefab, firePoint.position, bulletRotation);
+
+        // mermiyi yönüne doğru fırlat
+        bulletx.GetComponent<Rigidbody2D>().AddForce(bulletx.transform.up * bulletSpeed, ForceMode2D.Impulse);
+
+        // kamera salla
         CameraShake.instance.Shake();
+
+        // belirli süre sonra mermiyi yok et
         Destroy(bulletx, bulletLifeTime);
+
+        // particle efekti çalıştır
         particle.GetComponent<ParticleSystem>().Play();
     }
 }
