@@ -12,7 +12,7 @@ public class VideoHandler : MonoBehaviour
     public Image fadeImage; // UI Image for fading
     public float fadeDuration = 1.5f;
 
-    void Start()
+    public void Play()
     {
         // Önce ekran siyah olsun
         fadeImage.color = new Color(0, 0, 0, 1);
@@ -25,7 +25,6 @@ public class VideoHandler : MonoBehaviour
 
         videoPlayer.loopPointReached += OnVideoEnd;
     }
-
 
     void OnVideoEnd(VideoPlayer vp)
     {
