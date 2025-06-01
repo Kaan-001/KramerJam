@@ -98,10 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65524fba9383cbd4fb5532f49e294b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 9201896624186114587, guid: bfede25a3a311f04a8440885618c91b8, type: 3}
+  bulletPrefab: {fileID: 1045816131435259511, guid: 649e22c3b9e44934ea2382f39789d7f1, type: 3}
   firePoint: {fileID: 2137301178341628619}
-  bulletSpeed: 15
-  bulletLifeTime: 1
+  particle: {fileID: 0}
 --- !u!1 &2450336481663747396
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 2450336481663747396}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.869, y: 0.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -64710,11 +64710,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2137301178341628619, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.805
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2137301178341628619, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.031
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2770093562422976504, guid: f5575ed86a9b3674394451ec13985229, type: 3}
       propertyPath: particle
