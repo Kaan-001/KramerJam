@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,7 +14,7 @@ public class Enemy : MonoBehaviour
     private int damage = 2;
     private int maxHealth = 2;
     private int currentHealth;
-
+    public GameObject KeyDoor;
     void Start()
     {
         currentHealth = maxHealth;
@@ -46,7 +47,16 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= hit;
         if (currentHealth <= 0)
-        {
+        {if(KeyDoor != null) 
+            {
+                GameObject spawnedObj = Instantiate(KeyDoor, transform.position, Quaternion.identity);
+
+                Vector2 randomOffset = new Vector2(Random.Range(-1f, 1f), Random.Range(1f, 2f));
+                Vector3 jumpTarget = transform.position + (Vector3)randomOffset;
+
+                spawnedObj.transform.DOJump(jumpTarget, 1.5f, 1, 0.5f).SetEase(Ease.OutQuad);
+            }
+        // Düþman ölme efekti yapabilirsin destroy olur ama öncesinde efekti instantiate eder ve efekt kapanýr
             Destroy(gameObject);
         }
     }

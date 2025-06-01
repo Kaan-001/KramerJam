@@ -8,6 +8,7 @@ public class CameraSpawner : MonoBehaviour
     public bool canspawn;
     public GameObject[] enemyPrefabs;
     public float spawnDelay = 1f;
+    public GameObject Keydoor;
     public LayerMask wallLayer;
     public float effectBeforeSpawnDelay = 0.8f;
     public float checkRadius = 3f,countNow=0;
@@ -66,8 +67,11 @@ public class CameraSpawner : MonoBehaviour
 
                 // Düşmanı spawnla
                 GameObject enemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-                Instantiate(enemy, spawnPos, Quaternion.identity);
-
+                 GameObject Enemyx= Instantiate(enemy, spawnPos, Quaternion.identity);
+                if(countNow == spawnAmount - 1) 
+                {
+                    Enemyx.GetComponent<Enemy>().KeyDoor = Keydoor;
+                }
                 countNow += 1;
                 yield return new WaitForSeconds(spawnDelay);
             }

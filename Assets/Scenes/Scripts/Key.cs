@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    private bool isKeyEquiped = false;
+    public static bool isKeyEquiped = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
