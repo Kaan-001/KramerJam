@@ -24845,11 +24845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873759805128074035, guid: 7da499ad4046a5b47afc352d71fb484d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.88
+      value: 14.92
       objectReference: {fileID: 0}
     - target: {fileID: 4873759805128074035, guid: 7da499ad4046a5b47afc352d71fb484d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.79
+      value: -6.99
       objectReference: {fileID: 0}
     - target: {fileID: 4873759805128074035, guid: 7da499ad4046a5b47afc352d71fb484d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -98126,7 +98126,7 @@ GameObject:
   - component: {fileID: 1604418193}
   - component: {fileID: 1604418192}
   m_Layer: 5
-  m_Name: ScreenOpning
+  m_Name: ScreenOpening
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
