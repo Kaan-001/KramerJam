@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scenes.Scripts.BossFSM
 {
@@ -7,7 +8,7 @@ namespace Scenes.Scripts.BossFSM
         public void Enter(Boss boss)
         {
             boss.isActive = false;
-            Debug.Log("Boss Dead");
+            SceneManager.LoadScene(3);
         }
 
         public void Update()

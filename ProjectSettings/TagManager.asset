@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Box
   - Enemy
+  - Boss
   layers:
   - Default
   - TransparentFX
